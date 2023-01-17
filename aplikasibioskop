@@ -1,0 +1,91 @@
+package aplikasibioskop;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CGV {
+        private int IdMovie;
+    private int JumTiket;
+    private String MovieName;
+    private int MoviePrice;
+    private String UserName;
+
+    public int getIdMovie() {
+        return IdMovie;
+    }
+
+    public void setIdMovie(int idMovie) {
+        IdMovie = idMovie;
+    }
+
+    public int getJumTiket() {
+        return JumTiket;
+    }
+
+    public void setJumTiket(int jumTiket) {
+        JumTiket = jumTiket;
+    }
+
+    public String getMovieName() {
+        return MovieName;
+    }
+
+    public void setMovieName(String movieName) {
+        MovieName = movieName;
+    }
+
+    public int getMoviePrice() {
+        return MoviePrice;
+    }
+
+    public void setMoviePrice(int moviePrice) {
+        MoviePrice = moviePrice;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+    private void TotalJumlahPenonton(ArrayList<CGV> nontonApa, String avatar) {
+    }
+
+    public CGV(){
+    }
+    public CGV(int idmovie,int jumlahtiket, String namamovie,int harga, String username ){
+        this.IdMovie = idmovie;
+        this.JumTiket = jumlahtiket;
+        this.MovieName = namamovie;
+        this.MoviePrice = harga;
+        this.UserName = username;
+    }
+
+    public static void main(String[] args) {
+        int jumUser = 20;
+        Scanner user = new Scanner(System.in);
+        ArrayList<CGV> nontonApa = new ArrayList<>();
+        System.out.println("Film yang akan ditonton : ");
+        String movieSelect = user.nextLine();
+        ArrayList<String> myUser1 = new ArrayList<>();
+        CGV pesanan = new CGV();
+        for (int index= 0; index<jumUser; index++){
+            System.out.println("Nama User : " );
+            String myUser = user.nextLine();
+            myUser1.add(myUser);
+            pesanan.setIdMovie(1);
+            pesanan.setJumTiket(jumUser);
+            pesanan.setMovieName(movieSelect);
+            pesanan.setMoviePrice(55000);
+            pesanan.setUserName(myUser);
+            nontonApa.add(pesanan);
+        }
+        pesanan.TotalJumlahPenonton(nontonApa,"Avatar");
+
+
+
+    }
+
+
+}
